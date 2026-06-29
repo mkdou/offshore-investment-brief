@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>境外投资每日内参</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="rail" aria-label="日报导航">
+        <div class="brand">
+          <span class="brand-mark">OI</span>
+          <div>
+            <strong>境外投资</strong>
+            <span>每日内参库</span>
+          </div>
+        </div>
+        <nav class="nav-list">
+          <a href="#overview" class="active">总览</a>
+          <a href="#monitor">指标</a>
+          <a href="#archive">归档</a>
+          <a href="#market">市场</a>
+          <a href="#ipo">打新</a>
+          <a href="#ecosystem">生态</a>
+          <a href="#regulation">监管</a>
+          <a href="#actions">跟进</a>
+        </nav>
+        <div class="rail-note">
+          <span>边界</span>
+          <p>公开来源沉淀 + 业务研判。用于日常检索、专题复盘和临时沟通，不接内部接口。</p>
+        </div>
+      </aside>
+
+      <main class="page">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Cross-Border Investment Intelligence</p>
+            <h1>境外投资业务内参库</h1>
+            <p class="subtitle" id="briefHeadline">正在加载日报数据</p>
+          </div>
+          <div class="toolbar">
+            <label class="search-control">
+              <span>搜索</span>
+              <input type="search" id="searchInput" placeholder="搜港股、SFC、暗盘、AI..." />
+            </label>
+            <label class="date-control">
+              <span>日期</span>
+              <select id="dateSelect"></select>
+            </label>
+            <button type="button" id="copyBrief">复制摘要</button>
+            <button type="button" id="exportJson">导出当前日报</button>
+            <button type="button" id="printPage">打印/长图</button>
+          </div>
+        </header>
+
+        <section class="search-panel" id="searchPanel" hidden>
+          <div class="section-title compact-title">
+            <div>
+              <p class="eyebrow">Search</p>
+              <h2>搜索结果</h2>
+            </div>
+            <button type="button" id="clearSearch">清空搜索</button>
+          </div>
+          <div class="search-results" id="searchResults"></div>
+        </section>
+
+        <section class="overview-grid" id="overview">
+          <div class="brief-card lead-card">
+            <div class="section-heading">
+              <span>今日主线</span>
+              <strong id="editionLabel">样例日报</strong>
+            </div>
+            <h2 id="mainHeadline">加载中</h2>
+            <p id="briefText" class="brief-text"></p>
+            <div class="keyword-row" id="keywordRow"></div>
+          </div>
+          <div class="brief-card signal-card">
+            <div class="section-heading">
+              <span>关键信号</span>
+              <strong>按优先级扫读</strong>
+            </div>
+            <div class="signal-grid" id="signalGrid"></div>
+          </div>
+        </section>
+
+        <section class="section monitor-section" id="monitor">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Daily Monitors</p>
+              <h2>每日硬指标观察台</h2>
+            </div>
+            <p>把资讯拆成可反复查看的指标、触发阈值和验证入口，避免只停留在新闻摘要。</p>
+          </div>
+          <div class="monitor-grid" id="monitorBoard"></div>
+        </section>
+
+        <section class="section archive-section" id="archive">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Archive</p>
+              <h2>日报归档</h2>
+            </div>
+            <p>每天追加一条日报，后续可按日期切换，也可跨日期模糊搜索。</p>
+          </div>
+          <div class="archive-list" id="archiveList"></div>
+        </section>
+
+        <section class="section" id="market">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Market Pulse</p>
+              <h2>港美股与海外市场</h2>
+            </div>
+            <p>记录公开市场事实、证据强弱、触发阈值，以及下一步该验证什么。</p>
+          </div>
+          <div class="insight-grid" id="marketRows"></div>
+        </section>
+
+        <section class="section" id="ipo">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">IPO Watch</p>
+              <h2>港美股打新生态监控</h2>
+            </div>
+            <p>只沉淀公开市场数据、交易所公告和同业动态，不记录内部额度或预约情况。</p>
+          </div>
+          <div class="pipeline" id="ipoPipeline"></div>
+        </section>
+
+        <section class="section" id="ecosystem">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Platform Moves</p>
+              <h2>大厂风向与跨境平台生态</h2>
+            </div>
+            <p>把平台、牌照、流量、AI 和交易能力放在同一张竞争地图里观察。</p>
+          </div>
+          <div class="card-list" id="ecosystemList"></div>
+        </section>
+
+        <section class="section" id="regulation">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Regulatory Watch</p>
+              <h2>海内外监管合规动态</h2>
+            </div>
+            <p>保留原始来源入口，便于需要时回到监管原文或官网公告。</p>
+          </div>
+          <div class="reg-grid" id="regulatoryList"></div>
+        </section>
+
+        <section class="section action-section" id="actions">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Follow-up</p>
+              <h2>后续跟进清单</h2>
+            </div>
+            <p>把今天的资讯沉淀成资料库、专题研究或后续复盘动作。</p>
+          </div>
+          <div class="actions" id="actionList"></div>
+        </section>
+
+        <section class="section source-section">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Sources</p>
+              <h2>本期公共来源</h2>
+            </div>
+            <p>优先放交易所、监管机构、公司公告等一手来源。</p>
+          </div>
+          <div class="source-cloud" id="sourceCloud"></div>
+        </section>
+
+        <section class="section editor-section">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">Notes</p>
+              <h2>临时研判区</h2>
+            </div>
+            <p>本地暂存，不写回文件；适合临时补充判断后复制摘要或导出。</p>
+          </div>
+          <textarea id="pmNotes" placeholder="补充今天最值得记下来的判断，例如：某条监管原文的关键限制、某家平台后续可能布局、某个 IPO 热度是否可持续。"></textarea>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
