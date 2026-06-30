@@ -4,96 +4,147 @@
     {
       "date": "2026-06-29",
       "edition": "正式晨报",
-      "headline": "6 月 29 日交易日复盘：港美股盘面、IPO 文件与监管平台线索需要回到公开原文复核",
-      "brief": "本期为 2026-06-29 日报，记录 6 月 29 日周一公开信息。港美股已恢复常规交易，日报重点应从休市待核切换到收盘数据、公告原文和文件更新的复盘口径；成交额、涨跌幅、认购倍数、暗盘等硬数字只在回到交易所、监管机构或上市文件后入库。",
+      "headline": "6 月 29 日港股新股与月末到期并行，美股 IPO 日历转静，监管公开信息以演讲稿更新为主",
+      "brief": "本期严格按 2026-06-29 归档。公开来源显示，香港交易所日历在 6 月 29 日同时记录了 3 只主板新上市和一组月度指数及股票衍生产品最后交易日/到期日；Nasdaq IPO Calendar 当日 upcoming 项为空，最近 priced deal 停留在 6 月 26 日；证监会在 6 月 29 日新增一条黄天祐关于持份者主义与问责的公开演讲稿，未见同日新的重磅执法或制度通告进入本次已抓取清单。",
       "keywords": [
         "2026-06-29",
-        "港股复盘",
-        "美股文件",
-        "IPO",
-        "监管原文",
-        "平台生态"
+        "HKEX 新上市",
+        "衍生品到期日",
+        "Nasdaq IPO Calendar",
+        "SFC 演讲稿",
+        "公开来源"
       ],
       "topSignals": [
         {
-          "label": "市场复盘",
-          "value": "交易日数据回填",
+          "label": "港股上市",
+          "value": "3 只主板新股",
           "tone": "positive",
-          "note": "6 月 29 日不是休市日，应优先回填港股成交额、沽空占比、南向资金、恒指/科指宽度，以及美股主要指数和 AI 主线表现。"
+          "note": "HKEX 日历将礼邦医药、白鸽在线和北京海光芯正列为 6 月 29 日主板新上市，说明当日一级市场供给并不空档。"
         },
         {
-          "label": "IPO 文件",
-          "value": "公告原文优先",
+          "label": "衍生品节点",
+          "value": "月度到期日集中",
           "tone": "watch",
-          "note": "港股打新看 HKEX IPO Centre、披露易申请版本/聆讯资料/发售结果；美股 IPO 看 SEC F-1/S-1 与 Nasdaq/NYSE 日历。"
+          "note": "恒指、国指、科指、股票期货及期权等多个产品在 6 月 29 日同时进入最后交易日/到期日，现货与对冲盘解释权重上升。"
         },
         {
-          "label": "平台生态",
-          "value": "牌照 + 产品动作",
+          "label": "美股 IPO",
+          "value": "upcoming 为空",
+          "tone": "watch",
+          "note": "Nasdaq 官方日历显示 6 月 29 日 upcoming 无记录，近期 priced deal 最新落在 6 月 26 日，节奏切回 filed 和 withdrawn 跟踪。"
+        },
+        {
+          "label": "监管公开面",
+          "value": "新增 1 条演讲稿",
           "tone": "risk",
-          "note": "互联网平台、券商牌照、AI 投研和跨境账户能力相关信息，需要用 SFC 公众纪录册、披露易公告和 App 更新记录交叉验证。"
+          "note": "SFC 6 月 29 日新增的是黄天祐有关 stakeholderism 与 accountability 的公开演讲，不是新规或执法决定。"
         }
       ],
       "monitorBoard": [
         {
-          "bucket": "港股交易日复盘",
-          "metric": "成交额 / 沽空金额 / 南向成交占比 / 恒指与科指贡献",
-          "alert": "每日收盘后",
-          "watch": "回填 6 月 29 日港股总成交、沽空成交、南向资金方向、热门板块扩散度和权重股贡献，避免只凭指数涨跌判断风险偏好。",
-          "trigger": "若成交放大、南向净流入和板块宽度同时改善，才升级为可持续主线；若仅由少数权重拉动，则只标记为短线情绪修复。",
-          "use": "把用户可能追问的“为什么涨/跌、还能不能追、风险在哪里”拆成数据、资金和板块三层解释。",
+          "bucket": "港股一级市场",
+          "metric": "新上市家数 / 名单 / 所属板块",
+          "alert": "重要",
+          "watch": "确认 6 月 29 日主板新上市名单及后续披露易文件，避免把前一交易日招股或发售结果误写到 6 月 29 日日报里。",
+          "trigger": "若同日新股数量增加且披露易同步出现配售结果、稳定价格行动或大额基石信息，再升级为打新温度信号。",
+          "use": "先把一级市场日历事实写实，再决定是否值得继续追踪热度和成交承接。",
           "sources": [
             {
-              "name": "HKEX 证券市场统计数据",
-              "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
             },
-            {
-              "name": "港股通市场资料",
-              "url": "https://www.hkex.com.hk/Mutual-Market/Stock-Connect/Statistics/Hong-Kong-and-Mainland-Market-Highlights?sc_lang=zh-HK"
-            },
-            {
-              "name": "HKEXnews 披露易",
-              "url": "https://www1.hkexnews.hk/index_c.htm"
-            }
-          ]
-        },
-        {
-          "bucket": "港股 IPO 漏斗",
-          "metric": "递表 / 聆讯 / 招股 / 发售结果 / 暗盘 / 首日表现",
-          "alert": "高",
-          "watch": "按 6 月 29 日新增公告核对是否有申请版本、聆讯后资料集、正式招股、发售结果或上市文件更新，再补公开发售倍数、基石、暗盘和首日表现。",
-          "trigger": "同一行业连续出现高认购但暗盘或首日承接转弱，标记为热度退潮；高认购、强暗盘、高换手同时出现才算强打新窗口。",
-          "use": "沉淀市场打新温度，不依赖内部额度或预约数据。",
-          "sources": [
             {
               "name": "HKEX IPO Centre",
               "url": "https://www.hkex.com.hk/Listing/IPO-Centre?sc_lang=zh-HK"
-            },
-            {
-              "name": "披露易申请版本与聆讯资料",
-              "url": "https://www1.hkexnews.hk/app/appindex.html"
-            },
-            {
-              "name": "FINI 市场资料",
-              "url": "https://www.hkex.com.hk/Services/Platform-Services/FINI?sc_lang=zh-HK"
             }
           ]
         },
         {
-          "bucket": "美股与中概文件",
-          "metric": "8-K / 10-Q / F-1 / S-1 / IPO 日历 / 盘后异动",
+          "bucket": "港股衍生品结构",
+          "metric": "恒指 / 国指 / 科指 / 股票期货及期权最后交易日",
           "alert": "观察",
-          "watch": "回看 6 月 29 日美股交易与盘后文件更新，尤其是 AI 主线、中概、平台型公司和消费出海公司的披露变化。",
-          "trigger": "F-1/S-1 更新、发行区间确定、承销商变化、重大 8-K 或财报指引变化时，升级为专题跟踪。",
-          "use": "把美股资讯从标题流转成文件链，方便后续解释估值、风险披露和用户资产认知变化。",
+          "watch": "把 6 月 29 日视作月度衍生品节点日，后续解释盘面时优先区分现货主导、展期对冲还是到期前被动换仓。",
+          "trigger": "若成交、波动或权重股尾盘异动显著放大，再把到期因素上调为主导解释变量。",
+          "use": "帮助区分“趋势交易”与“到期日噪音”，避免把结构性换仓误判成单边风险偏好切换。",
           "sources": [
             {
-              "name": "SEC EDGAR Company Search",
-              "url": "https://www.sec.gov/edgar/searchedgar/companysearch"
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
             },
+            {
+              "name": "HKEX 证券市场统计数据",
+              "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
+            }
+          ]
+        },
+        {
+          "bucket": "美股 IPO 日历",
+          "metric": "upcoming / priced / filed / withdrawn",
+          "alert": "中",
+          "watch": "Nasdaq 6 月 29 日页面显示 upcoming 无记录，说明当日关注点应转向最近 priced、最新 filed 与 withdrawn 变化。",
+          "trigger": "若 upcoming 恢复、有大型中概或平台型公司进入 filed/priced，才切回一级发行窗口判断。",
+          "use": "把美股打新从“有没有新票”拆成“新发节奏、已定价节奏、撤回节奏”三层跟踪。",
+          "sources": [
             {
               "name": "Nasdaq IPO Calendar",
               "url": "https://www.nasdaq.com/market-activity/ipos"
+            },
+            {
+              "name": "Nasdaq IPO Calendar API",
+              "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
+            }
+          ]
+        }
+      ],
+      "marketPulse": [
+        {
+          "title": "港股：6 月 29 日的公开市场结构先看新上市与到期日重叠",
+          "market": "HK",
+          "level": "重要",
+          "tags": [
+            "新上市",
+            "到期日",
+            "结构性流动性"
+          ],
+          "fact": "HKEX 日历把 6 月 29 日同时标注为 3 只主板新上市日期，并列出恒指、国指、科指、股票期货及期权等一系列最后交易日/到期日事件。",
+          "whyItMatters": "这意味着 6 月 29 日的盘面解释不能只按单边情绪写，需要同时考虑一级市场供给与月度衍生品换仓/对冲因素。",
+          "evidence": "Strong：HKEX 香港交易所日历。",
+          "readThrough": "在未补齐港股统计页硬数字前，最稳的当日结论是“结构事件密集”，而不是直接下多空判断。",
+          "nextCheck": "回到 HKEX 证券市场统计页补齐成交额、沽空和板块贡献，再验证到期因素是否真的放大了尾盘或权重股波动。",
+          "sources": [
+            {
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
+            },
+            {
+              "name": "HKEX 证券市场统计数据",
+              "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
+            }
+          ]
+        },
+        {
+          "title": "美股：一级发行窗口在 6 月 29 日转向“无新 upcoming、看 filed/withdrawn”",
+          "market": "US",
+          "level": "观察",
+          "tags": [
+            "IPO Calendar",
+            "priced",
+            "filed",
+            "withdrawn"
+          ],
+          "fact": "Nasdaq IPO Calendar 的 2026 年 6 月页面在 6 月 29 日显示 upcoming 无记录，priced 最新项目为 6 月 26 日在 NYSE 定价的 Sinda Ltd.，同时 6 月 26 日 filed 名单里新增了 AMR Resources Acquisition Corp.、Gold Stone Technical Inc. 和 Gifts International Holdings Ltd. 等项目。",
+          "whyItMatters": "没有当天 new upcoming，说明可交易的新发节奏暂时放缓，但 filed 列表仍在扩容，投资者教育与主题追踪应更多放在后备项目储备而不是短期申购窗口。",
+          "evidence": "Strong：Nasdaq 官方页面及其 API；来源标注为 EDGAR Online。",
+          "readThrough": "6 月 29 日的美股一级市场不是“没有信息”，而是信息重心从当日发行切到储备池和撤回池变化。",
+          "nextCheck": "持续复核 6 月 30 日后的 upcoming 是否恢复，以及 filed 名单里是否出现更高关注度的中概或平台型发行人。",
+          "sources": [
+            {
+              "name": "Nasdaq IPO Calendar",
+              "url": "https://www.nasdaq.com/market-activity/ipos"
+            },
+            {
+              "name": "Nasdaq IPO Calendar API",
+              "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
             },
             {
               "name": "NYSE IPO Center",
@@ -102,118 +153,72 @@
           ]
         }
       ],
-      "marketPulse": [
-        {
-          "title": "港股：6 月 29 日应从开盘验证切换到收盘复盘",
-          "market": "HK",
-          "level": "重要",
-          "tags": [
-            "成交额",
-            "南向资金",
-            "沽空",
-            "板块宽度"
-          ],
-          "fact": "6 月 29 日为周一交易日，不能继续沿用 6 月 28 日周日休市口径；日报应回填收盘后的公开市场数据和公告原文。",
-          "whyItMatters": "如果日期归档和覆盖内容错位，后续搜索、归档和复盘都会失真；修正后可以按覆盖日沉淀真实市场体感。",
-          "evidence": "Strong：HKEX 统计、港股通公开数据、HKEXnews 公告；Medium：主流财经媒体收盘复盘。",
-          "readThrough": "今日最重要的不是先写观点，而是把 6 月 29 日交易事实补齐，再判断是资金扩散、权重拉动、打新热度变化还是监管/平台事件驱动。",
-          "nextCheck": "补齐 6 月 29 日港股成交额、沽空占比、南向净买入、恒指/科指贡献个股、热门板块涨跌与成交排名。",
-          "sources": [
-            {
-              "name": "HKEX 证券市场统计数据",
-              "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
-            },
-            {
-              "name": "HKEXnews 披露易",
-              "url": "https://www1.hkexnews.hk/index_c.htm"
-            }
-          ]
-        },
-        {
-          "title": "美股：6 月 29 日复盘要同时看盘面和 SEC 文件",
-          "market": "US",
-          "level": "观察",
-          "tags": [
-            "SEC",
-            "AI",
-            "中概",
-            "IPO"
-          ],
-          "fact": "6 月 29 日美股交易日信息需要用指数/板块表现、盘前盘后异动和 SEC 文件更新交叉验证，不能只看新闻标题。",
-          "whyItMatters": "跨境用户往往先被美股热点吸引，但产品和投研需要解释这条信息影响的是持仓风险、估值预期、IPO 认知还是监管边界。",
-          "evidence": "Strong：SEC 文件、公司公告、交易所 IPO 日历；Medium：专业媒体与行情复盘。",
-          "readThrough": "AI 主线仍要拆成算力、云 capex、半导体设备、光通信、电力散热和应用变现几层；中概则重点看 F-1/8-K/监管风险披露。",
-          "nextCheck": "补齐 6 月 29 日重点公司 8-K/10-Q/F-1 更新、AI 相关公司盘后异动、Nasdaq/NYSE IPO 日历变化。",
-          "sources": [
-            {
-              "name": "SEC EDGAR",
-              "url": "https://www.sec.gov/edgar/search/"
-            },
-            {
-              "name": "Nasdaq IPO Calendar",
-              "url": "https://www.nasdaq.com/market-activity/ipos"
-            }
-          ]
-        }
-      ],
       "ipoPipeline": [
         {
-          "name": "6 月 29 日港股 IPO 公告复核",
+          "name": "港股：6 月 29 日 3 只主板新上市进入观察清单",
           "exchange": "HKEX",
-          "stage": "递表 / 聆讯 / 招股 / 发售结果",
-          "sector": "全行业",
-          "heat": "待公告复核",
+          "stage": "新上市",
+          "sector": "医药 / 数字科技 / 半导体",
+          "heat": "重要",
           "tags": [
-            "披露易",
-            "IPO Centre",
-            "FINI"
+            "主板",
+            "新上市",
+            "HKEX 日历"
           ],
-          "publicData": "以 6 月 29 日披露易与 HKEX IPO Centre 为准，记录新增申请版本、聆讯后资料集、正式招股、发售结果和上市文件。",
-          "interpretation": "如果没有公告原文，不把项目写成市场热点；如果出现发售结果或暗盘/首日表现，再结合公开认购、暗盘、首日换手和同业走势判断热度。",
-          "evidence": "Strong：HKEX/披露易/FINI；Medium：券商公开孖展统计、暗盘公开报价。",
-          "nextCheck": "逐项核对 6 月 29 日新增文件，并按行业、阶段、公开发售结果、暗盘和上市后一周表现沉淀。",
+          "publicData": "HKEX 日历列出的 6 月 29 日主板新上市包括：礼邦医药（江苏）股份有限公司（9637）、白鸽在线（厦门）数字科技股份有限公司（2672）、北京海光芯正科技股份有限公司（1191）。",
+          "interpretation": "当日一级市场并非空窗，且行业横跨医药、数字科技和半导体，后续应优先核对各自招股书、发售结果及上市后承接，而不是凭主题热度做泛化结论。",
+          "evidence": "Strong：HKEX 香港交易所日历；后续需用披露易文件补完发售与上市后表现。",
+          "nextCheck": "补查三家公司在披露易和 IPO Centre 的招股书、发售结果和上市文件，确认是否存在可持续跟踪的行业线索。",
           "watchItems": [
-            "新增申请版本",
-            "聆讯后资料集",
-            "发售结果公告",
-            "暗盘与首日表现"
+            "9637 礼邦医药",
+            "2672 白鸽在线",
+            "1191 北京海光芯正",
+            "发售结果与上市后承接"
           ],
           "sources": [
             {
-              "name": "披露易申请版本与公告",
-              "url": "https://www1.hkexnews.hk/app/appindex.html"
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
             },
             {
               "name": "HKEX IPO Centre",
               "url": "https://www.hkex.com.hk/Listing/IPO-Centre?sc_lang=zh-HK"
+            },
+            {
+              "name": "披露易申请版本与公告",
+              "url": "https://www1.hkexnews.hk/app/appindex.html"
             }
           ]
         },
         {
-          "name": "6 月 29 日美股 IPO / 中概文件复核",
+          "name": "美股：6 月 29 日无新增 upcoming，关注最新 priced 和 filed",
           "exchange": "NASDAQ/NYSE",
-          "stage": "F-1 / S-1 / IPO Calendar",
-          "sector": "中概 / 平台 / 消费 / AI 应用",
+          "stage": "upcoming / priced / filed / withdrawn",
+          "sector": "SPAC / 中概 / 工业 / 科技",
           "heat": "观察",
           "tags": [
-            "SEC",
-            "F-1",
-            "S-1"
+            "Nasdaq API",
+            "EDGAR Online",
+            "IPO 节奏"
           ],
-          "publicData": "以 SEC EDGAR、Nasdaq IPO Calendar、NYSE IPO Center 为准，记录 6 月 29 日新增或更新的 F-1/S-1、发行区间、承销商和风险披露。",
-          "interpretation": "美股 IPO 对跨境投资平台的价值不只在交易机会，更在主题教育、风险披露和资产认知；中概项目尤其要看 VIE、监管、收入质量和客户集中度。",
-          "evidence": "Strong：SEC F-1/S-1；Medium：交易所 IPO 日历、公司 IR。",
-          "nextCheck": "复核 6 月 29 日是否有中概或平台型公司文件更新，若有则单独生成专题卡。",
+          "publicData": "Nasdaq API 显示 6 月 29 日 upcoming 无记录；最近 priced deal 为 6 月 26 日 NYSE 上市的 Sinda Ltd.（SIND）；filed 列表最近新增项目包括 6 月 26 日的 AMR Resources Acquisition Corp.、Gold Stone Technical Inc.、Gifts International Holdings Ltd. 等。",
+          "interpretation": "一级发行窗口暂歇时，最有价值的并不是硬凑“今日新股”，而是把储备项目和撤回项目的方向变化提前沉淀，给后续选题和投教做储备。",
+          "evidence": "Strong：Nasdaq 官方 API/页面；来源说明为 EDGAR Online。",
+          "nextCheck": "继续看 6 月 30 日及之后是否出现新的 upcoming，以及 Gifts International Holdings Ltd. 等中小项目在 filed/withdrawn 之间的后续变化。",
           "watchItems": [
-            "F-1/S-1 更新",
-            "发行区间",
-            "承销商",
-            "风险披露"
+            "upcoming 空窗",
+            "SIND 6/26 priced",
+            "AMACU 6/26 filed",
+            "withdrawn 列表变化"
           ],
           "sources": [
             {
-              "name": "SEC Company Search",
-              "url": "https://www.sec.gov/edgar/searchedgar/companysearch"
+              "name": "Nasdaq IPO Calendar",
+              "url": "https://www.nasdaq.com/market-activity/ipos"
+            },
+            {
+              "name": "Nasdaq IPO Calendar API",
+              "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
             },
             {
               "name": "NYSE IPO Center",
@@ -224,51 +229,47 @@
       ],
       "ecosystemMoves": [
         {
-          "title": "平台生态观察：先核牌照主体，再看产品入口",
+          "title": "监管公开沟通偏“治理叙事”，未见同日新的平台级制度动作入库",
           "priority": "中",
           "tags": [
-            "牌照",
-            "券商生态",
-            "AI 投研",
-            "账户入口"
+            "SFC",
+            "演讲稿",
+            "治理",
+            "平台生态"
           ],
-          "fact": "互联网平台或同业券商的动作需要拆成牌照主体、公告原文、App 功能、流量入口和技术能力五层核验。",
-          "impact": "如果牌照和产品入口同时变化，才可能影响跨境投资平台生态；单条媒体消息只能作为线索。",
-          "watch": "关注 SFC 公众纪录册、披露易公告、App 更新日志、官网新闻和招聘信息是否出现同向变化。",
-          "nextCheck": "把 6 月 29 日新增平台/券商生态消息逐条标注来源等级，只有原文可查的进入日报主卡。",
+          "fact": "SFC 在 6 月 29 日新增的是黄天祐关于“From Aspiration to Accountability: Bridging the Stakeholderism Gap”的公开演讲稿；已抓取的同日官方来源中，未见新的平台牌照、开户入口或券商功能更新原文进入本次日报主卡。",
+          "impact": "这更像监管层持续输出治理和问责框架，而不是直接改变交易或平台规则；对平台生态的启示偏中长期合规叙事，而非短线业务动作。",
+          "watch": "继续用 SFC 新闻稿、公众纪录册和 HKEX 披露易交叉核对，只有出现可验证的主体动作才升格为生态主线。",
+          "nextCheck": "次日继续巡检券商公告、牌照主体和 App 功能更新，防止把公开演讲过度解读为政策落地。",
           "sources": [
             {
-              "name": "SFC 公众纪录册",
-              "url": "https://apps.sfc.hk/publicregWeb/searchByName"
+              "name": "SFC 26PR102 新闻内容",
+              "url": "https://apps.sfc.hk/edistributionWeb/api/news/content?refNo=26PR102&lang=TC"
             },
             {
-              "name": "HKEX 披露易公告检索",
-              "url": "https://www1.hkexnews.hk/search/titlesearch.xhtml?lang=zh"
+              "name": "SFC 演讲辞资料库",
+              "url": "https://www.sfc.hk/TC/Published-resources/Speeches"
             }
           ]
         }
       ],
       "regulatoryWatch": [
         {
-          "agency": "SFC / SEC / CSRC",
-          "topic": "6 月 29 日监管公告与执法信息巡检",
+          "agency": "SFC",
+          "topic": "6 月 29 日新增公开材料是问责与持份者主义主题演讲，不是新规或执法决定",
           "severity": "中",
-          "policy": "每日只记录可追溯的监管原文、名单变化、公告和执法信息，不用传闻替代监管口径。",
-          "impact": "影响跨境开户、资讯推送、虚拟资产、营销触达、风险提示和中概/美股文件解释。",
-          "action": "若 6 月 29 日出现监管原文更新，单独保留链接、关键条款和业务影响；无原文则只放入待核线索。",
-          "nextCheck": "复核 SFC 新闻稿/名单、SEC Newsroom/EDGAR、CSRC 公告。",
+          "policy": "SFC 当天发布黄天祐在香港特别会议上的主旨演讲，主题是“从愿景到问责：跨越持份者主义的实践差距”，并把英文演讲全文挂到官网。",
+          "impact": "这类材料不会即时改变开户、营销或产品规则，但会持续强化香港资本市场对治理、董事会问责和持份者叙事的监管话语。",
+          "action": "本日报只把它记为监管沟通风向，不上升为制度变更；若后续出现配套咨询、通函或执法案例，再合并成专题。",
+          "nextCheck": "继续复核 SFC 新闻稿列表，看 6 月 30 日后是否跟出咨询、通函或执法更新。",
           "sources": [
             {
-              "name": "SFC 新闻稿",
-              "url": "https://www.sfc.hk/TC/News-and-announcements/Policy-statements-and-announcements"
+              "name": "SFC 26PR102 新闻内容",
+              "url": "https://apps.sfc.hk/edistributionWeb/api/news/content?refNo=26PR102&lang=TC"
             },
             {
-              "name": "SEC Newsroom",
-              "url": "https://www.sec.gov/newsroom"
-            },
-            {
-              "name": "中国证监会公告",
-              "url": "http://www.csrc.gov.cn/csrc/c100028/common_list.shtml"
+              "name": "SFC 演讲 PDF",
+              "url": "https://www.sfc.hk/-/media/EN/files/COM/Speech/Speech---CH-at-Strategic-Management-Society-Special-Conference-in-Hong-Kong.pdf"
             }
           ]
         }
@@ -276,31 +277,52 @@
       "actions": [
         {
           "owner": "资料库",
-          "task": "把日报日期口径改为信息所属日期：6 月 30 日早上生成的前一日内参，归档日期应写 2026-06-29。",
+          "task": "保留 2026-06-29 作为唯一归档日期，不新增生成日或 coverageDate 字段。",
           "urgency": "已完成"
         },
         {
-          "owner": "数据复核",
-          "task": "补齐 6 月 29 日港股收盘、沽空、南向、IPO 公告和 SEC 文件更新，只有官方来源确认后写入硬数字。",
+          "owner": "港股复核",
+          "task": "次轮补查 HKEX 证券市场统计页和披露易，补齐 6 月 29 日成交结构及 3 只新股上市后文件。",
           "urgency": "今日"
+        },
+        {
+          "owner": "美股复核",
+          "task": "继续跟踪 Nasdaq upcoming 是否恢复，以及 6 月 26 日后 filed/withdrawn 列表是否出现更高关注度项目。",
+          "urgency": "本周"
         }
       ],
       "sources": [
         {
-          "name": "HKEX",
-          "url": "https://www.hkex.com.hk/?sc_lang=zh-HK"
+          "name": "HKEX 香港交易所日历",
+          "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
         },
         {
-          "name": "HKEXnews 披露易",
-          "url": "https://www1.hkexnews.hk/index_c.htm"
+          "name": "HKEX IPO Centre",
+          "url": "https://www.hkex.com.hk/Listing/IPO-Centre?sc_lang=zh-HK"
         },
         {
-          "name": "SFC",
-          "url": "https://www.sfc.hk/TC/"
+          "name": "HKEX 证券市场统计数据",
+          "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
         },
         {
-          "name": "SEC",
-          "url": "https://www.sec.gov/"
+          "name": "Nasdaq IPO Calendar",
+          "url": "https://www.nasdaq.com/market-activity/ipos"
+        },
+        {
+          "name": "Nasdaq IPO Calendar API",
+          "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
+        },
+        {
+          "name": "NYSE IPO Center",
+          "url": "https://www.nyse.com/ipo-center/recent-ipo"
+        },
+        {
+          "name": "SFC 26PR102 新闻内容",
+          "url": "https://apps.sfc.hk/edistributionWeb/api/news/content?refNo=26PR102&lang=TC"
+        },
+        {
+          "name": "SFC 演讲辞资料库",
+          "url": "https://www.sfc.hk/TC/Published-resources/Speeches"
         }
       ]
     },
