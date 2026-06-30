@@ -225,7 +225,7 @@ function renderArchive() {
     .map(
       (report) => `
         <button type="button" class="archive-item ${report.date === state.activeDate ? "selected" : ""}" data-date="${escapeHtml(report.date)}">
-          <span>${escapeHtml(report.date)}</span>
+          <span>${escapeHtml(formatReportLabel(report))}</span>
           <strong>${escapeHtml(report.headline)}</strong>
         </button>
       `,
@@ -246,12 +246,17 @@ function renderSourceCloud(sources = []) {
     .join("");
 }
 
+function formatReportLabel(report) {
+  const coverage = report.coverageDate ? ` / 覆盖 ${report.coverageDate}` : "";
+  return `生成 ${report.date}${coverage} · ${report.edition}`;
+}
+
 function renderReport(report) {
   state.activeReport = report;
   state.activeDate = report.date;
   $("#dateSelect").value = report.date;
   $("#briefHeadline").textContent = report.brief;
-  $("#editionLabel").textContent = `${report.edition} · ${report.date}`;
+  $("#editionLabel").textContent = formatReportLabel(report);
   $("#mainHeadline").textContent = report.headline;
   $("#briefText").textContent = report.brief;
   $("#keywordRow").innerHTML = report.keywords.map((key) => `<span>${escapeHtml(key)}</span>`).join("");
@@ -412,7 +417,7 @@ async function init() {
   const data = await response.json();
   state.reports = data.reports.sort((a, b) => b.date.localeCompare(a.date));
   $("#dateSelect").innerHTML = state.reports
-    .map((report) => `<option value="${escapeHtml(report.date)}">${escapeHtml(report.date)} · ${escapeHtml(report.edition)}</option>`)
+    .map((report) => `<option value="${escapeHtml(report.date)}">${escapeHtml(formatReportLabel(report))}</option>`)
     .join("");
   const savedDate = localStorage.getItem("offshore-brief-active-date");
   setActiveReport(savedDate || state.reports[0].date);
