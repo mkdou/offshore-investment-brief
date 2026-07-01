@@ -1,6 +1,371 @@
 {
-  "updatedAt": "2026-06-30",
+  "updatedAt": "2026-07-01",
   "reports": [
+    {
+      "date": "2026-06-30",
+      "edition": "正式晨报",
+      "headline": "6 月 30 日港股 5 只主板新股齐发、月末衍生品结算集中，美股 IPO 日历无 upcoming 但 filed 升温",
+      "brief": "本期严格按 2026-06-30 归档。公开来源显示，香港交易所日历在 6 月 30 日同时记录了 5 只主板新上市以及一组恒指、国指、科指、股票期货及期权等月末最后结算日或最后交易日；Nasdaq 官方 IPO Calendar 在 6 月 30 日更新后仍显示 upcoming 无记录，但 filed 区在 6 月 29 日新增 SeeQC、Koei Group、Ionic Digital、Smart Pointer Group Holdings 四个项目，说明美股一级发行窗口的公开信息重心从当日定价转向储备池扩容。",
+      "keywords": [
+        "2026-06-30",
+        "HKEX 5 只主板新股",
+        "月末最后结算日",
+        "Nasdaq IPO Calendar",
+        "6 月 29 日新增 filed",
+        "公开来源"
+      ],
+      "topSignals": [
+        {
+          "label": "港股上市",
+          "value": "5 只主板新股",
+          "tone": "positive",
+          "note": "HKEX 日历将广东真健康医疗科技、杭州千岛湖鲟龙科技、江西生物制品研究所、浙江来福谐波传动、亮晴控股列为 6 月 30 日主板新上市。"
+        },
+        {
+          "label": "衍生品节点",
+          "value": "月末最后结算日集中",
+          "tone": "watch",
+          "note": "恒指、国指、科指、股票期货及期权等产品在 6 月 30 日集中进入最后结算日或最后交易日，盘面解释需要优先区分结构性换仓和真实风险偏好。"
+        },
+        {
+          "label": "美股 IPO",
+          "value": "upcoming 为空",
+          "tone": "watch",
+          "note": "Nasdaq 官方 API 在 2026-06-30 的 latest update 下返回 Upcoming: No record found，但 filed 区新增 4 个 6 月 29 日项目。"
+        },
+        {
+          "label": "美股储备池",
+          "value": "新增 4 个 filed 项目",
+          "tone": "positive",
+          "note": "SeeQC、Koei Group、Ionic Digital、Smart Pointer Group Holdings 进入 filed 列表，说明发行储备并未停滞，只是短期没有转化为 upcoming。"
+        }
+      ],
+      "monitorBoard": [
+        {
+          "bucket": "港股一级市场",
+          "metric": "6 月 30 日主板新上市数量 / 名单 / 后续上市文件",
+          "alert": "重要",
+          "watch": "把 6 月 30 日作为供给密集日，先确认 5 只主板新上市名单和后续披露易上市文件，再决定是否继续跟踪承接和行业线索。",
+          "trigger": "若后续披露易同步出现稳定价格行动、发售结果补充或重要股东减持限制说明，再升级为更高优先级跟踪。",
+          "use": "避免把前序招股期信息错写进 6 月 30 日日报，先把当天已经发生的新上市事实写实。",
+          "sources": [
+            {
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
+            },
+            {
+              "name": "HKEX IPO Centre",
+              "url": "https://www.hkex.com.hk/Listing/IPO-Centre?sc_lang=zh-HK"
+            },
+            {
+              "name": "披露易新上市信息 AP & PHIP",
+              "url": "https://www1.hkexnews.hk/app/appindex.html"
+            }
+          ]
+        },
+        {
+          "bucket": "港股衍生品结构",
+          "metric": "恒指 / 国指 / 科指 / 股票期货及期权最后结算日",
+          "alert": "观察",
+          "watch": "把 6 月 30 日视作月末结算节点，后续解释尾盘波动和权重股异动时优先区分结算盘、展期盘和主动风险偏好切换。",
+          "trigger": "若 HKEX 证券市场统计页补出的成交与沽空数据显示尾盘放量，再把结算因素上调为主导解释变量。",
+          "use": "帮助把结构性到期噪音与真实趋势分开，避免在月末结算日过度外推方向判断。",
+          "sources": [
+            {
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
+            },
+            {
+              "name": "HKEX 证券市场统计数据",
+              "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
+            }
+          ]
+        },
+        {
+          "bucket": "美股 IPO 储备池",
+          "metric": "upcoming / filed / priced 的切换节奏",
+          "alert": "中",
+          "watch": "Nasdaq 6 月 30 日 API 显示 upcoming 为空，但 filed 在 6 月 29 日新增 4 个项目，说明需要从“有没有新票”转成“储备池是否继续扩容”的跟踪框架。",
+          "trigger": "若 7 月初 upcoming 恢复，或 filed 名单里出现更高关注度的平台型或中概项目，再切回一级发行窗口判断。",
+          "use": "在无当日 upcoming 的情况下，仍能持续沉淀可跟踪的公开发行储备，而不是把当日简单写成空窗。",
+          "sources": [
+            {
+              "name": "Nasdaq IPO Calendar",
+              "url": "https://www.nasdaq.com/market-activity/ipos"
+            },
+            {
+              "name": "Nasdaq IPO Calendar API",
+              "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
+            }
+          ]
+        }
+      ],
+      "marketPulse": [
+        {
+          "title": "港股：6 月 30 日是“新股供给 + 月末结算”双重结构日",
+          "market": "HK",
+          "level": "重要",
+          "tags": [
+            "主板新上市",
+            "月末结算",
+            "结构性流动性"
+          ],
+          "fact": "HKEX 日历在 6 月 30 日同时记录了 5 只主板新上市，并列出恒指、国指、科指、股票期货及期权、恒指波幅指数期货等一系列最后结算日或最后交易日事件。",
+          "whyItMatters": "当一级市场供给与衍生品结算同日出现时，现货盘面往往同时受新股资金分流、结算换仓和尾盘对冲影响，不能只按单边情绪写。",
+          "evidence": "Strong：HKEX 香港交易所日历。",
+          "readThrough": "6 月 30 日最稳的框架不是先下多空判断，而是承认当天是结构事件高度密集的月末节点。",
+          "nextCheck": "回到 HKEX 证券市场统计页补齐成交额、沽空与板块贡献，再验证结算因素是否真正主导了当日交易结构。",
+          "sources": [
+            {
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
+            },
+            {
+              "name": "HKEX 证券市场统计数据",
+              "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
+            }
+          ]
+        },
+        {
+          "title": "美股：6 月 30 日无 upcoming，但 filed 列表在 6 月 29 日新添 4 项",
+          "market": "US",
+          "level": "观察",
+          "tags": [
+            "IPO Calendar",
+            "filed",
+            "upcoming",
+            "储备池"
+          ],
+          "fact": "Nasdaq IPO Calendar API 在 6 月 30 日返回 Upcoming: No record found，同时 filed 列表显示 6 月 29 日新增 SeeQC、Koei Group、Ionic Digital、Smart Pointer Group Holdings 四个项目；最近 priced 项仍停留在 6 月 26 日或更早。",
+          "whyItMatters": "这说明美股一级发行节奏不是完全停摆，而是从“当日可申购/可定价”转成“储备项目继续上架、等待窗口”的阶段。",
+          "evidence": "Strong：Nasdaq 官方页面及 API，页面标注数据源为 EDGAR Online。",
+          "readThrough": "6 月 30 日的美股一级市场重点应放在 filed 池扩容方向，而不是硬凑当天 priced 或 upcoming 故事。",
+          "nextCheck": "继续跟踪 7 月初 upcoming 是否恢复，以及 6 月 29 日新 filed 项目后续是否补出价格区间、交易所归属或撤回信息。",
+          "sources": [
+            {
+              "name": "Nasdaq IPO Calendar",
+              "url": "https://www.nasdaq.com/market-activity/ipos"
+            },
+            {
+              "name": "Nasdaq IPO Calendar API",
+              "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
+            }
+          ]
+        }
+      ],
+      "ipoPipeline": [
+        {
+          "name": "港股：6 月 30 日 5 只主板新上市进入公开跟踪池",
+          "exchange": "HKEX",
+          "stage": "新上市",
+          "sector": "医疗 / 消费 / 生物制品 / 工业传动 / 综合控股",
+          "heat": "重要",
+          "tags": [
+            "主板",
+            "新上市",
+            "HKEX 日历"
+          ],
+          "publicData": "HKEX 日历列出的 6 月 30 日主板新上市包括：广东真健康医疗科技开发股份有限公司（2697）、杭州千岛湖鲟龙科技股份有限公司（6715）、江西生物制品研究所股份有限公司（6915）、浙江来福谐波传动股份有限公司（3952）、亮晴控股有限公司（3774）。",
+          "interpretation": "单日 5 只主板新股意味着香港一级市场供给并不冷清，但公开资料仍应优先锚定交易所日历、IPO Centre 和披露易文件，而不是市场传闻式热度指标。",
+          "evidence": "Strong：HKEX 香港交易所日历；后续需用 IPO Centre 和披露易文件补完上市文件与招股资料。",
+          "nextCheck": "逐一补查 5 家公司的招股书、发售结果和上市后公告，判断哪些行业线索值得继续沉淀到后续晨报。",
+          "watchItems": [
+            "2697 广东真健康医疗科技",
+            "6715 杭州千岛湖鲟龙科技",
+            "6915 江西生物制品研究所",
+            "3952 浙江来福谐波传动",
+            "3774 亮晴控股"
+          ],
+          "sources": [
+            {
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
+            },
+            {
+              "name": "HKEX IPO Centre",
+              "url": "https://www.hkex.com.hk/Listing/IPO-Centre?sc_lang=zh-HK"
+            },
+            {
+              "name": "披露易新上市信息 AP & PHIP",
+              "url": "https://www1.hkexnews.hk/app/appindex.html"
+            }
+          ]
+        },
+        {
+          "name": "美股：6 月 30 日不看 upcoming，转看 6 月 29 日新 filed 四项目",
+          "exchange": "NASDAQ",
+          "stage": "filed / upcoming",
+          "sector": "量子计算 / 工业与科技 / 数字资产 / 中小市值",
+          "heat": "观察",
+          "tags": [
+            "Nasdaq API",
+            "EDGAR Online",
+            "IPO 储备池"
+          ],
+          "publicData": "Nasdaq API 显示 upcoming 无记录；filed 列表新出现的 6 月 29 日项目为 SeeQC（SEQC，拟募资 7500 万美元）、Koei Group（KOEI，拟募资 1940.625 万美元）、Ionic Digital（IOND，金额未列示）以及 Smart Pointer Group Holdings（SPGH，拟募资 3450 万美元）。",
+          "interpretation": "当日没有 new upcoming 时，最有价值的沉淀是把新 filed 的方向、金额和后续进度记下来，为后续窗口打开时的项目筛选做准备。",
+          "evidence": "Strong：Nasdaq 官方 API/页面。",
+          "nextCheck": "继续复核这 4 个项目是否补出价格区间、交易所信息或后续撤回，同时关注 7 月初是否有新项目从 filed 转入 upcoming。",
+          "watchItems": [
+            "SEQC SeeQC",
+            "KOEI Koei Group",
+            "IOND Ionic Digital",
+            "SPGH Smart Pointer Group Holdings"
+          ],
+          "sources": [
+            {
+              "name": "Nasdaq IPO Calendar",
+              "url": "https://www.nasdaq.com/market-activity/ipos"
+            },
+            {
+              "name": "Nasdaq IPO Calendar API",
+              "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
+            }
+          ]
+        }
+      ],
+      "ecosystemMoves": [
+        {
+          "title": "港交所公开信息链条在 6 月 30 日保持高密度更新，晨报应继续锚定交易所原文",
+          "priority": "高",
+          "tags": [
+            "HKEX",
+            "IPO Centre",
+            "披露易",
+            "平台生态"
+          ],
+          "fact": "6 月 30 日 HKEX 日历记录了 5 只主板新上市；与此同时，IPO Centre 与披露易 AP & PHIP 页面仍是对应上市文件、申请版本与公开披露材料的官方入口。",
+          "impact": "对境外投资内容生产来说，平台生态的可用信息并不少，关键是继续坚持以交易所页面为锚，而不是用孖展、暗盘或非官方热度字段替代。",
+          "watch": "后续若同一批公司在 IPO Centre 或披露易补出更关键的上市后公告，再把生态关注点从“信息入口”升级为“公司层面的持续披露”。",
+          "nextCheck": "逐一核对 5 家公司在 IPO Centre 和披露易页面的公开文件是否齐全，并检查是否出现上市后首日以外的重要补充公告。",
+          "sources": [
+            {
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
+            },
+            {
+              "name": "HKEX IPO Centre",
+              "url": "https://www.hkex.com.hk/Listing/IPO-Centre?sc_lang=zh-HK"
+            },
+            {
+              "name": "披露易新上市信息 AP & PHIP",
+              "url": "https://www1.hkexnews.hk/app/appindex.html"
+            }
+          ]
+        },
+        {
+          "title": "Nasdaq 官方 IPO 页面把 6 月 30 日的信息重心切到 filed 池，而不是当日 upcoming",
+          "priority": "中",
+          "tags": [
+            "Nasdaq",
+            "IPO Calendar",
+            "公开 API"
+          ],
+          "fact": "Nasdaq API 在 6 月 30 日标记 LAST UPDATED: 06/30/2026，并返回 Upcoming: No record found；但 filed 区同步带出了 6 月 29 日新增的 4 个项目。",
+          "impact": "这意味着公开平台生态并不是没有内容，而是要求使用者从“看申购窗口”转为“看储备项目池和后续转化”。",
+          "watch": "如果 7 月初 upcoming 恢复，需要第一时间判断是已有 filed 项目转化，还是新增项目直接进入窗口。",
+          "nextCheck": "继续复核 Nasdaq 页面与 API 的更新时间戳，避免把 6 月 29 日 filed 错写成 6 月 30 日新发行。",
+          "sources": [
+            {
+              "name": "Nasdaq IPO Calendar",
+              "url": "https://www.nasdaq.com/market-activity/ipos"
+            },
+            {
+              "name": "Nasdaq IPO Calendar API",
+              "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
+            }
+          ]
+        }
+      ],
+      "regulatoryWatch": [
+        {
+          "agency": "HKEX",
+          "topic": "6 月 30 日集中出现指数与股票衍生品最后结算日，属于交易所既定制度性节点",
+          "severity": "中",
+          "policy": "HKEX 日历在 6 月 30 日同时列出恒指、国指、科指、股票期货及期权等多类产品的最后结算日或最后交易日安排。",
+          "impact": "这类制度性节点不会直接给出多空结论，但会显著提高盘面解读对结算盘、展期盘和尾盘对冲的敏感度。",
+          "action": "后续解读 6 月 30 日市场时，先把结算因素列为基础变量，再叠加宏观和板块驱动。",
+          "nextCheck": "用 HKEX 证券市场统计数据复核成交和沽空结构，判断结算因素是否在实际交易中放大。",
+          "sources": [
+            {
+              "name": "HKEX 香港交易所日历",
+              "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
+            },
+            {
+              "name": "HKEX 证券市场统计数据",
+              "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
+            }
+          ]
+        },
+        {
+          "agency": "Nasdaq / EDGAR Online",
+          "topic": "6 月 30 日官方 IPO 日历页面无 upcoming，但保留对 6 月 29 日 filed 的公开披露",
+          "severity": "中",
+          "policy": "Nasdaq 官方 IPO Calendar API 返回 code 1002：Upcoming: No record found，并在同一响应中继续列示最新 filed、priced 与 withdrawn 数据。",
+          "impact": "对一级市场跟踪来说，这类“无 upcoming 但 filed 继续新增”的状态意味着窗口观察不能中断，只是要把重点从即时发行切到储备项目池。",
+          "action": "晨报侧应明确区分页面更新时间、项目 filed 日期和 report.date，避免把跨日信息错配到错误日期。",
+          "nextCheck": "继续核对 7 月初的 official update 时间戳，以及 6 月 29 日 filed 项目是否有后续状态变化。",
+          "sources": [
+            {
+              "name": "Nasdaq IPO Calendar",
+              "url": "https://www.nasdaq.com/market-activity/ipos"
+            },
+            {
+              "name": "Nasdaq IPO Calendar API",
+              "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
+            }
+          ]
+        }
+      ],
+      "actions": [
+        {
+          "owner": "内容 / 投教",
+          "urgency": "今日",
+          "task": "围绕 6 月 30 日港股 5 只主板新上市，补齐每家公司在 IPO Centre 与披露易的公开文件链路，先做事实卡片再谈热度判断。"
+        },
+        {
+          "owner": "市场 / 研究",
+          "urgency": "今日",
+          "task": "把 6 月 30 日港股盘面解释先建立在月末结算因素之上，再结合 HKEX 统计数据验证是否存在尾盘放量和结构性换仓。"
+        },
+        {
+          "owner": "美股一级市场",
+          "urgency": "本周",
+          "task": "持续跟踪 SeeQC、Koei Group、Ionic Digital、Smart Pointer Group Holdings 的 filed 后续，重点看是否补出价格区间或转入 upcoming。"
+        },
+        {
+          "owner": "数据复核",
+          "urgency": "今日",
+          "task": "继续坚持只引用交易所和官方 IPO 页面原文，不补写非公开孖展、暗盘、认购倍数或未证实涨跌幅。"
+        }
+      ],
+      "sources": [
+        {
+          "name": "HKEX 香港交易所日历",
+          "url": "https://www.hkex.com.hk/News/HKEX-Calendar?sc_lang=zh-HK"
+        },
+        {
+          "name": "HKEX IPO Centre",
+          "url": "https://www.hkex.com.hk/Listing/IPO-Centre?sc_lang=zh-HK"
+        },
+        {
+          "name": "披露易新上市信息 AP & PHIP",
+          "url": "https://www1.hkexnews.hk/app/appindex.html"
+        },
+        {
+          "name": "HKEX 证券市场统计数据",
+          "url": "https://www.hkex.com.hk/Market-Data/Statistics/Securities-Market?sc_lang=zh-HK"
+        },
+        {
+          "name": "Nasdaq IPO Calendar",
+          "url": "https://www.nasdaq.com/market-activity/ipos"
+        },
+        {
+          "name": "Nasdaq IPO Calendar API",
+          "url": "https://api.nasdaq.com/api/ipo/calendar?date=2026-06"
+        }
+      ]
+    },
     {
       "date": "2026-06-29",
       "edition": "正式晨报",
